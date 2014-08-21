@@ -15,13 +15,13 @@ public class CadastraClienteTest {
 	
 	@Test
 	public void cadastraClienteNormalTest(){
-		this.clientes.cadastra(TipoFormulario.NORMAL,"Gilson", "91523426");
-		assertEquals("Nome: Gilson\nNúmero: 91523426\nCategoria: Normal", this.clientes.getFormulario(0));
+		this.clientes.cadastra(new FormularioNormal(),"Gilson", "91523426");
+		assertEquals("Nome: Gilson\nNúmero: 91523426\nCategoria: Normal", this.clientes.getDadosCliente(0));
 	}
 
 	@Test
 	public void cadastraClienteVipTest(){
-		this.clientes.cadastra(TipoFormulario.VIP,"Gilson", "91523426");
-		assertEquals("Nome: Gilson\nNúmero: 91523426\nCategoria: Vip", this.clientes.getFormulario(0));
+		this.clientes.cadastra(new FormularioVip(),"Gilson", "91523426");
+		assertEquals("Nome: Gilson\nNúmero: 91523426\nCategoria: Vip", this.clientes.getDadosCliente(0));
 	}
 }
